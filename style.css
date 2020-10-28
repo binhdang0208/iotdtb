@@ -1,0 +1,46 @@
+*{padding: 0; margin: 0;} 
+
+header{background:#FACC2E ; margin-top: 0px; height: 165px; line-height: 40px; color: black; font-weight: bold; font-size: 30px; text-align: center;}
+section{background:#A9E2F3; margin-top: 10px; height: 260px;line-height:50px; color: black;font-weight: bold; line-height: 32px; font-size: 32px; text-align: left;}
+article{background: white; margin-top: 15px; height: 20px;line-height: 40px; color: red ;font-weight: bold; font-size: 45px; text-align: center;}
+aside{background: white; margin-top: 15px; height: 30px; line-height: 50px; color: black; font-weight: bold;font-size: 35px; text-align: center;}
+footer {background: #F6CED8; margin-top: 15px; height: 90px; line-height: 30px; color: black; font-weight: bold; font-size: 20px; text-align: center;}
+a{background: white; margin-top: 15px; height: 30px; line-height: 50px; color: black; font-weight: bold;font-size: 35px; text-align: right;}
+
+
+/* Định dạng thanh điều hướng trên cùng */
+.menu {
+	overflow: hidden;
+	background-color: #A9A9F5;
+}
+
+/* Định dạng link điều hướng */
+.menu a {
+	float: left;
+	display: block;
+	color:#A9A9F5;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+
+}
+/* Thay đổi màu liên kết khi di chuột qua */
+.menu a{
+	background-color: #db7093;
+	color: white;
+	font-weight: bold
+}
+/* Tạo ba cột bằng nhau, float cạnh nhau */
+.taocot {
+	float: left;
+	width: 32%;
+	padding: 15px;
+}
+/* Clear float khác sau các cột */
+.row: after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+}
