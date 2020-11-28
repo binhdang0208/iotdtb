@@ -46,7 +46,7 @@ giatri.on('value',function(snapshot){
 
 	// Lấy giá trị của slider từ server
 	slider_7 = snapshot.child('/data/output/DO07').val();
-	slider_8 = snapshot.child('/data/output/DO08').val();
+	slider_8 = snapshot.child('/data/output/DO08').exportVal();
 
 	// Ghi log trong console để theo dõi kết quả
 	// Mở web -> F12 -> chọn console để xem
@@ -96,9 +96,9 @@ function setup_den(den_id, status){
 // Tham số truyền vào bao là den_id: số thứ tự của đèn (1, 2, 3,...)
 function changeStatus_den(den_id)
 {
-	var status = document.getElementById('btn-toggle-'+den_id).checked;
+	var status = document.getElementById('btn-toggle-'+den_id).checked;// checked : true or false.
 
-	if (status === true)
+	if (status === true) /// so sanh tuyet doi
 	{
 		firebase.database().ref("AIO/data/output/DO0"+den_id).set(1);
 	} else {
@@ -106,20 +106,7 @@ function changeStatus_den(den_id)
 	}
 }
 
-
-
-
-// Hàm này dùng để cập nhật giá trị lên server khi slider được điều chỉnh
-function inputSlider(slider_id){
-
-	var slider_value = document.getElementById("slider-range-"+slider_id).value;
-
-	firebase.database().ref("AIO/data/output/DO0"+slider_id).set(slider_value);
-
-	document.getElementById("slider-result-"+slider_id).innerHTML = 'Giá trị: ' + slider_value;
-}
-
-// Hàm này dùng để khởi tạo giá trị cho slider
+// Hàm này dùng để set giá trị cho slider
 function init_slider(slider_id, slider_value){
 
 	document.getElementById("slider-range-"+slider_id).value = slider_value;
