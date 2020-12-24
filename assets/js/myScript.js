@@ -1,4 +1,5 @@
 
+
   // Your web app's Firebase configuration
   var firebaseConfig = {
   	apiKey: "AIzaSyDtvElzVF2OLX0P4OoV1ttB-5G045Srzyk",
@@ -45,8 +46,8 @@ giatri.on('value',function(snapshot){
 	den_6 = snapshot.child('/data/output/DO06').val();
 
 	// Lấy giá trị của slider từ server
-	slider_7 = snapshot.child('/data/output/DO07').val();
-	slider_8 = snapshot.child('/data/output/DO08').exportVal();
+	slider_7 = snapshot.child('/data/input/DO07').val();
+	slider_8 = snapshot.child('/data/input/DO08').val();
 
 	// Ghi log trong console để theo dõi kết quả
 	// Mở web -> F12 -> chọn console để xem
@@ -93,7 +94,7 @@ function setup_den(den_id, status){
 }
 
 // Hàm này dùng để bật tắt đèn
-// Tham số truyền vào bao là den_id: số thứ tự của đèn (1, 2, 3,...)
+// Tham số truyền vào là den_id: số thứ tự của đèn (1, 2, 3,...)
 function changeStatus_den(den_id)
 {
 	var status = document.getElementById('btn-toggle-'+den_id).checked;// checked : true or false.
@@ -107,10 +108,15 @@ function changeStatus_den(den_id)
 }
 
 // Hàm này dùng để set giá trị cho slider
+// Hàm này truyền vào 2 tham số:
+//  1. slider_id: là id của slider (7 hoặc 8)
+//  2. slider_value: giá trị của volumne lấy từ firebase
 function init_slider(slider_id, slider_value){
 
+	// Set giá trị cho thanh slider
 	document.getElementById("slider-range-"+slider_id).value = slider_value;
 
+	// Set giá trị hiển thị cho mục "Giá trị: " bên dưới slider
 	document.getElementById("slider-result-"+slider_id).innerHTML = 'Giá trị: ' + slider_value;
 
 }
