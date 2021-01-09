@@ -86,10 +86,10 @@ giatri.on('value',function(snapshot){
 function setup_den(den_id, status){
 	if (status === 1){
 		$('#btn-toggle-' + den_id).bootstrapToggle('on');
-		document.getElementById('hinhanh'+den_id).src = "http://iotcontrol.online/AIO/images/light_on.png";
+		document.getElementById('hinhanh'+den_id).src = "./assets/img/on.jpg";
 	} else {
 		$('#btn-toggle-' + den_id).bootstrapToggle('off');
-		document.getElementById('hinhanh'+den_id).src = "http://iotcontrol.online/AIO/images/light_off.png";
+		document.getElementById('hinhanh'+den_id).src = "./assets/img/off.jpg";
 	}
 }
 
